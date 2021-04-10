@@ -5,11 +5,9 @@ public class DocTypeException extends Exception{
 	private String type; 
 	
 	public DocTypeException(String type) {
-		super("Es menor de edad");
+		super("El cliente es menor de edad");
 		this.type=type;	
 	}
-
-	
 	public String getType() {
 		return type;
 	}

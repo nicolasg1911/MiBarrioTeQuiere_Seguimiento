@@ -5,11 +5,9 @@ public class NumException extends Exception{
 	private int day;
 	
 	public NumException(int day) {
-		super("No puede ingresar hoy");
-		this.day=day;
-		
+		super("No puede ingresar hoy, numero de cedula incorrecto");
+		this.day=day;	
 	}
-
 	public int getDay() {
 		return day;
 	}

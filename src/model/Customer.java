@@ -16,6 +16,14 @@ public class Customer {
 		this.id=id;
 		this.docType=DocumentType.valueOf(documentType);
 	}
+	
+	public DocumentType getDocumentType() {
+		return docType;
+	}
+	
+	public void setDocumentType(DocumentType documentType) {
+		this.docType = documentType;
+	}
 
 	public String getId() {
 		return id;
@@ -25,22 +33,13 @@ public class Customer {
 		this.id = id;
 	}
 	
-	public DocumentType getDocumentType() {
-		return docType;
-	}
-	
-	public void setDocumentType(DocumentType documentType) {
-		this.docType = documentType;
-	}
-	
 	public Boolean addPerson( String id,  String documentType, int date) throws DocTypeException, NumException{
-		boolean out=false;
+		boolean able=false;
 		int temp=Character.getNumericValue(id.charAt(id.length()-2));
-
 		if(!documentType.equals("TI")) {
 			if((date%2==0 && temp%2!=0)||(date%2!=0 && temp%2==0)) {
-				out = true;
-				System.out.println("El Cliente puede entrar");
+				able = true;
+				System.out.println("El Cliente puede ingresar");
 			}else {
 				throw new NumException(date);
 			}
@@ -50,8 +49,6 @@ public class Customer {
 			throw new DocTypeException(documentType);
 			
 		}
-		return out;
+		return able;
 	}
-	
-
 }
